@@ -4,8 +4,6 @@ const sum = (a,b) => {
 
 console.log(sum(7,3))
 
-module.exports = { sum };
-
 let oneEuroIs = {
     "JPY": 127.9, 
     "USD": 1.2, 
@@ -18,17 +16,14 @@ const fromEuroToDollar = function(valueInEuro){
 
 }
 
-module.exports = { sum, fromEuroToDollar }
-
-let oneDollarIs = {
-    "JPY": 130.75,
-    "EUR": 0.9,
-    "GBP": 0.8,
+const fromDollarToYen = function(valueInDollar){     
+     let valueInYen = Math.floor(1/1.2 * 127.9);
+     return valueInYen;
 }
 
-const fromDollarToYen = function(valueInDollar){
-    let valueInYen = valueInDollar * 130.75;
-    return valueInYen;
+const fromYenToPound = function(valueInYen){
+    let valueInBp = Math.floor((500/127.9)) * 0.8;
+    return valueInBp;
 }
 
-module.exports = { sum, fromEuroToDollar, fromDollarToYen }
+module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound}
